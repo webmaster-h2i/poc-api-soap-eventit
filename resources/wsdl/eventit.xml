@@ -1,0 +1,1216 @@
+<wsdl:definitions xmlns:tns="http://poceventit.h2i.fr/api/soap/wsdl" targetNamespace="http://poceventit.h2i.fr/api/soap/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+    <wsdl:types>
+        <s:schema targetNamespace="http://poceventit.h2i.fr/api/soap/wsdl">
+            <s:complexType name="CreationResponse">
+                <s:sequence>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="false" name="statut" type="s:boolean"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="message" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="message_technique" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="false" name="detail" type="s:int"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="Cabinet">
+                <s:sequence>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="NOM" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="CODE_CABINET" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="CHEMIN_VERS_SQLITE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="NOM_BASE_MYSQL" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="FTP_HOTE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="FTP_UTILISATEUR" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="FTP_MOTDEPASSE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="FTP_REPERTOIRE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="WEBSERVICE_URL" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="MDP_ARAMIS" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="URL_PHOTOS" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="URL_SITE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="MODE_TEST" type="s:string"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="Personne">
+                <s:sequence>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="CODE_PERS" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DEN" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="NOM" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="PRENOM" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TELEPHONE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="FAX" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="MOBILE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="EMAIL" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="RUE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="LOCALITE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="CP" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="VILLE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TOP_FOUR" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TOP_CONTACT" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TOP_COP" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TOP_LOC" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TOP_PRO" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TOP_UTIL" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TOP_GARDIEN" type="s:string"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="EI">
+                <s:sequence>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="CODE_EI" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="NOM" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="RUE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="LOCALITE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="CP" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="VILLE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TYPE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DT_FIN" type="s:string"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="Lot">
+                <s:sequence>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="CODE_EILOT" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="CODE_EI" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="CODE_LOT" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="NATURE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TYPELOT" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="USAGE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="SURFACE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="ETAGE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="LOT_REEL" type="s:string"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="Gestionnaire">
+                <s:sequence>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="CODE_PERS" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DEN" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="NOM" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="PRENOM" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TELEPHONE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="FAX" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="MOBILE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="EMAIL" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="RUE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="LOCALITE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="CP" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="VILLE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TOP_FOUR" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TOP_CONTACT" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TOP_COP" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TOP_LOC" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TOP_PRO" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TOP_UTIL" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TOP_GARDIEN" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="ID_GESTIONNAIRE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="CODE_EI" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TITRE" type="s:string"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="Ticket">
+                <s:sequence>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="ID_TICKET" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TITRE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DESCRIPTION" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="STATUT" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DATE_CREATION" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DATE_MODIFICATION" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DATE_SUPPRESSION" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="CODE_EILOT" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="CODE_EI" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="CODE_LOT" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TYPE_GESTION" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TYPE_DEMANDE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="CLE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="CATNAT" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="ID_PERSONNE_CREATEUR" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="ID_PERSONNE_DECLARANT" type="s:string"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="Message">
+                <s:sequence>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="ID_MESSAGE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="ID_TICKET" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="ID_PERSONNE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TITRE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DESCRIPTION" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="STATUT" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DATE_CREATION" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DATE_MODIFICATION" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DATE_SUPPRESSION" type="s:string"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="Intervention">
+                <s:sequence>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="ID_INTERVENTION" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="ID_TICKET" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="ID_PERSONNE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TITRE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DESCRIPTION" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="STATUT" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DATE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DATE_CREATION" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DATE_MODIFICATION" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DUREE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DATE_FIN" type="s:string"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="Devis">
+                <s:sequence>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="ID_DEVIS" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="ID_TICKET" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="ID_PERSONNE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TITRE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DESCRIPTION" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="STATUT" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DATE_CREATION" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DATE_MODIFICATION" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="NOM_FICHIER" type="s:string"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="Facture">
+                <s:sequence>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="ID_FACTURE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="ID_TICKET" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="ID_PERSONNE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TITRE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DESCRIPTION" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="STATUT" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DATE_CREATION" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DATE_MODIFICATION" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="NOM_FICHIER" type="s:string"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="Commande">
+                <s:sequence>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="ID_COMMANDE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="ID_TICKET" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="CODE_EI" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="AFFECTATION" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TYPE_OPERATION" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="CODE_LOT" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="CODE_ORDRE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="CODE_PRO" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="CODE_FOUR" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DATE_OPERATION" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DATE_FIN_PREVU" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="NO_REF_FOUR" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TITRE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DESCRIPTION" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="CAT_NAT" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="COMPTE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="CLE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="SS_COMPTE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="QUANTITE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="MONTANT_HT" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="CODE_TVA" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="ID_PERSONNE_DECLARANT" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="ID_PERSONNE_RESPONSABLE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DATE_CREATION" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DATE_MODIFICATION" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TOP_SYNCHRO" type="s:string"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="Contact">
+                <s:sequence>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="ID_CONTACT" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="ID_COMMANDE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="ID_PERSONNE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DATE_CONTACT" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TOP_SYNCHRO" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="ADRESSE_MAIL" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="ID_TICKET" type="s:string"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="Photo">
+                <s:sequence>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="ID_PHOTO" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="ID_TICKET" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="ID_PERSONNE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TITRE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DESCRIPTION" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="STATUT" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DATE_CREATION" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DATE_MODIFICATION" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DATE_SUPPRESSION" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="NOM_FICHIER" type="s:string"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="PhotoOS">
+                <s:sequence>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="ID_PHOTOOS" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="ID_OS" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TYPE_OS" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="ID_PERSONNE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TITRE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DESCRIPTION" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="STATUT" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DATE_CREATION" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DATE_MODIFICATION" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DATE_SUPPRESSION" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="NOM_FICHIER" type="s:string"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="Evenement">
+                <s:sequence>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="ID_EVENEMENT" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="ID_TICKET" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="ID_PERSONNE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TITRE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DESCRIPTION" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="STATUT" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DATE_CREATION" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DATE_MODIFICATION" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DATE_SUPPRESSION" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TYPE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="ID_LIE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TYPE_ID_LIE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DETAIL_EVENEMENT" type="s:string"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="Resultat">
+                <s:sequence>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="CODE_RESULTAT" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TYPE_RESULTAT" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="LIB_RESULTAT" type="s:string"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="Bundle">
+                <s:sequence>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="CABINET" type="tns:Cabinet"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="PERSONNE" type="tns:Personne"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="EIS" type="tns:EIArray"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="LOTS" type="tns:LotArray"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="GESTIONNAIRES" type="tns:GestionnaireArray"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TICKETS" type="tns:TicketArray"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="MESSAGES" type="tns:MessageArray"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="PHOTOS" type="tns:PhotoArray"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="PHOTOSOS" type="tns:PhotoOSArray"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="INTERVENTIONS" type="tns:InterventionArray"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="EVENEMENTS" type="tns:EvenementArray"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="FACTURE" type="tns:FactureArray"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DEVIS" type="tns:DevisArray"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="COMMANDE" type="tns:CommandeArray"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="CONTACT" type="tns:ContactArray"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="ListeStruct">
+                <s:sequence>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="RESULTATS" type="tns:ResultatArray"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="ListeDevStruct">
+                <s:sequence>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="RESDEV" type="tns:DevCoArray"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="BundleResponse">
+                <s:sequence>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="false" name="statut" type="s:boolean"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="message" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="message_technique" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="detail" type="tns:Bundle"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="ListeResponse">
+                <s:sequence>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="false" name="statut" type="s:boolean"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="message" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="message_technique" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="detail" type="tns:ListeStruct"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="ListeRespDev">
+                <s:sequence>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="false" name="statut" type="s:boolean"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="message" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="message_technique" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="detail" type="tns:ListeDevStruct"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="EIArray">
+                <s:complexContent>
+                    <s:restriction base="soapenc:Array">
+                        <s:attribute ref="soapenc:arrayType" wsdl:arrayType="tns:EI[]"/>
+                    </s:restriction>
+                </s:complexContent>
+            </s:complexType>
+            <s:complexType name="LotArray">
+                <s:complexContent>
+                    <s:restriction base="soapenc:Array">
+                        <s:attribute ref="soapenc:arrayType" wsdl:arrayType="tns:Lot[]"/>
+                    </s:restriction>
+                </s:complexContent>
+            </s:complexType>
+            <s:complexType name="GestionnaireArray">
+                <s:complexContent>
+                    <s:restriction base="soapenc:Array">
+                        <s:attribute ref="soapenc:arrayType" wsdl:arrayType="tns:Gestionnaire[]"/>
+                    </s:restriction>
+                </s:complexContent>
+            </s:complexType>
+            <s:complexType name="TicketArray">
+                <s:complexContent>
+                    <s:restriction base="soapenc:Array">
+                        <s:attribute ref="soapenc:arrayType" wsdl:arrayType="tns:Ticket[]"/>
+                    </s:restriction>
+                </s:complexContent>
+            </s:complexType>
+            <s:complexType name="MessageArray">
+                <s:complexContent>
+                    <s:restriction base="soapenc:Array">
+                        <s:attribute ref="soapenc:arrayType" wsdl:arrayType="tns:Message[]"/>
+                    </s:restriction>
+                </s:complexContent>
+            </s:complexType>
+            <s:complexType name="PhotoArray">
+                <s:complexContent>
+                    <s:restriction base="soapenc:Array">
+                        <s:attribute ref="soapenc:arrayType" wsdl:arrayType="tns:Photo[]"/>
+                    </s:restriction>
+                </s:complexContent>
+            </s:complexType>
+            <s:complexType name="PhotoOSArray">
+                <s:complexContent>
+                    <s:restriction base="soapenc:Array">
+                        <s:attribute ref="soapenc:arrayType" wsdl:arrayType="tns:PhotoOS[]"/>
+                    </s:restriction>
+                </s:complexContent>
+            </s:complexType>
+            <s:complexType name="InterventionArray">
+                <s:complexContent>
+                    <s:restriction base="soapenc:Array">
+                        <s:attribute ref="soapenc:arrayType" wsdl:arrayType="tns:Intervention[]"/>
+                    </s:restriction>
+                </s:complexContent>
+            </s:complexType>
+            <s:complexType name="EvenementArray">
+                <s:complexContent>
+                    <s:restriction base="soapenc:Array">
+                        <s:attribute ref="soapenc:arrayType" wsdl:arrayType="tns:Evenement[]"/>
+                    </s:restriction>
+                </s:complexContent>
+            </s:complexType>
+            <s:complexType name="FactureArray">
+                <s:complexContent>
+                    <s:restriction base="soapenc:Array">
+                        <s:attribute ref="soapenc:arrayType" wsdl:arrayType="tns:Facture[]"/>
+                    </s:restriction>
+                </s:complexContent>
+            </s:complexType>
+            <s:complexType name="DevisArray">
+                <s:complexContent>
+                    <s:restriction base="soapenc:Array">
+                        <s:attribute ref="soapenc:arrayType" wsdl:arrayType="tns:Devis[]"/>
+                    </s:restriction>
+                </s:complexContent>
+            </s:complexType>
+            <s:complexType name="CommandeArray">
+                <s:complexContent>
+                    <s:restriction base="soapenc:Array">
+                        <s:attribute ref="soapenc:arrayType" wsdl:arrayType="tns:Commande[]"/>
+                    </s:restriction>
+                </s:complexContent>
+            </s:complexType>
+            <s:complexType name="ContactArray">
+                <s:complexContent>
+                    <s:restriction base="soapenc:Array">
+                        <s:attribute ref="soapenc:arrayType" wsdl:arrayType="tns:Contact[]"/>
+                    </s:restriction>
+                </s:complexContent>
+            </s:complexType>
+            <s:complexType name="ResultatArray">
+                <s:complexContent>
+                    <s:restriction base="soapenc:Array">
+                        <s:attribute ref="soapenc:arrayType" wsdl:arrayType="tns:Resultat[]"/>
+                    </s:restriction>
+                </s:complexContent>
+            </s:complexType>
+            <s:complexType name="DevCo">
+                <s:sequence>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DATE_CREA" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="CODE_PERS" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="TNOMENCLATURE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="NOMENCLATURE" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="MONTANTTTC" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="DATE_FIN" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="NOMFOUR" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="CM_LIBELLE" type="s:string"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="DevCoArray">
+                <s:complexContent>
+                    <s:restriction base="soapenc:Array">
+                        <s:attribute ref="soapenc:arrayType" wsdl:arrayType="tns:DevCo[]"/>
+                    </s:restriction>
+                </s:complexContent>
+            </s:complexType>
+        </s:schema>
+    </wsdl:types>
+    <wsdl:message name="AjoutTicketSoapIn">
+        <wsdl:part name="code_cabinetbase" type="s:string"/>
+        <wsdl:part name="titre" type="s:string"/>
+        <wsdl:part name="description" type="s:string"/>
+        <wsdl:part name="date_creation" type="s:string"/>
+        <wsdl:part name="code_ei" type="s:string"/>
+        <wsdl:part name="code_lot" type="s:string"/>
+        <wsdl:part name="type_gestion" type="s:string"/>
+        <wsdl:part name="id_personne" type="s:string"/>
+        <wsdl:part name="top_synchro" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="AjoutTicketSoapOut">
+        <wsdl:part name="return" type="tns:CreationResponse"/>
+    </wsdl:message>
+    <wsdl:message name="AjoutTicketV2SoapIn">
+        <wsdl:part name="code_cabinetbase" type="s:string"/>
+        <wsdl:part name="titre" type="s:string"/>
+        <wsdl:part name="description" type="s:string"/>
+        <wsdl:part name="date_creation" type="s:string"/>
+        <wsdl:part name="code_ei" type="s:string"/>
+        <wsdl:part name="code_lot" type="s:string"/>
+        <wsdl:part name="type_gestion" type="s:string"/>
+        <wsdl:part name="id_personne" type="s:string"/>
+        <wsdl:part name="top_synchro" type="s:string"/>
+        <wsdl:part name="ajout_declarant" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="AjoutTicketV2SoapOut">
+        <wsdl:part name="return" type="tns:CreationResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ModifieTicketSoapIn">
+        <wsdl:part name="code_cabinetbase" type="s:string"/>
+        <wsdl:part name="id_ticket" type="s:string"/>
+        <wsdl:part name="statut" type="s:string"/>
+        <wsdl:part name="titre" type="s:string"/>
+        <wsdl:part name="description" type="s:string"/>
+        <wsdl:part name="date_modification" type="s:string"/>
+        <wsdl:part name="code_ei" type="s:string"/>
+        <wsdl:part name="code_lot" type="s:string"/>
+        <wsdl:part name="id_personne" type="s:string"/>
+        <wsdl:part name="id_personne_declarant" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="ModifieTicketSoapOut">
+        <wsdl:part name="return" type="tns:CreationResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ModifieTicketStatutSoapIn">
+        <wsdl:part name="code_cabinetbase" type="s:string"/>
+        <wsdl:part name="id_ticket" type="s:string"/>
+        <wsdl:part name="statut" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="ModifieTicketStatutSoapOut">
+        <wsdl:part name="return" type="tns:CreationResponse"/>
+    </wsdl:message>
+    <wsdl:message name="AjoutInterventionSoapIn">
+        <wsdl:part name="code_cabinetbase" type="s:string"/>
+        <wsdl:part name="id_ticket" type="s:string"/>
+        <wsdl:part name="id_personne" type="s:string"/>
+        <wsdl:part name="titre" type="s:string"/>
+        <wsdl:part name="date" type="s:string"/>
+        <wsdl:part name="duree" type="s:string"/>
+        <wsdl:part name="date_fin" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="AjoutInterventionSoapOut">
+        <wsdl:part name="return" type="tns:CreationResponse"/>
+    </wsdl:message>
+    <wsdl:message name="AjoutFournisseurSoapIn">
+        <wsdl:part name="code_cabinetbase" type="s:string"/>
+        <wsdl:part name="id_ticket" type="s:string"/>
+        <wsdl:part name="id_personne" type="s:string"/>
+        <wsdl:part name="top_selection" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="AjoutFournisseurSoapOut">
+        <wsdl:part name="return" type="tns:CreationResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ContactFournisseurSoapIn">
+        <wsdl:part name="code_cabinetbase" type="s:string"/>
+        <wsdl:part name="id_ticket" type="s:string"/>
+        <wsdl:part name="id_personne" type="s:string"/>
+        <wsdl:part name="action" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="ContactFournisseurSoapOut">
+        <wsdl:part name="return" type="tns:CreationResponse"/>
+    </wsdl:message>
+    <wsdl:message name="EnvoiOSSoapIn">
+        <wsdl:part name="code_cabinetbase" type="s:string"/>
+        <wsdl:part name="id_personne" type="s:string"/>
+        <wsdl:part name="fichierPDF64" type="s:string"/>
+        <wsdl:part name="id_ticket" type="s:string"/>
+        <wsdl:part name="mail_dest" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="EnvoiOSSoapOut">
+        <wsdl:part name="return" type="tns:CreationResponse"/>
+    </wsdl:message>
+    <wsdl:message name="AjoutAbonnementSoapIn">
+        <wsdl:part name="code_cabinetbase" type="s:string"/>
+        <wsdl:part name="id_ticket" type="s:string"/>
+        <wsdl:part name="id_personne" type="s:string"/>
+        <wsdl:part name="action" type="s:string"/>
+        <wsdl:part name="origine" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="AjoutAbonnementSoapOut">
+        <wsdl:part name="return" type="tns:CreationResponse"/>
+    </wsdl:message>
+    <wsdl:message name="AjoutPhotoSoapIn">
+        <wsdl:part name="code_cabinetbase" type="s:string"/>
+        <wsdl:part name="id_ticket" type="s:string"/>
+        <wsdl:part name="id_personne" type="s:string"/>
+        <wsdl:part name="titre" type="s:string"/>
+        <wsdl:part name="date_creation" type="s:string"/>
+        <wsdl:part name="nom_fichier" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="AjoutPhotoSoapOut">
+        <wsdl:part name="return" type="tns:CreationResponse"/>
+    </wsdl:message>
+    <wsdl:message name="AjoutPhotoOSSoapIn">
+        <wsdl:part name="code_cabinetbase" type="s:string"/>
+        <wsdl:part name="id_OS" type="s:string"/>
+        <wsdl:part name="type_OS" type="s:string"/>
+        <wsdl:part name="id_personne" type="s:string"/>
+        <wsdl:part name="titre" type="s:string"/>
+        <wsdl:part name="date_creation" type="s:string"/>
+        <wsdl:part name="nom_fichier" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="AjoutPhotoOSSoapOut">
+        <wsdl:part name="return" type="tns:CreationResponse"/>
+    </wsdl:message>
+    <wsdl:message name="AjoutFactureSoapIn">
+        <wsdl:part name="code_cabinetbase" type="s:string"/>
+        <wsdl:part name="id_ticket" type="s:string"/>
+        <wsdl:part name="id_personne" type="s:string"/>
+        <wsdl:part name="date_creation" type="s:string"/>
+        <wsdl:part name="nom_fichier" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="AjoutFactureSoapOut">
+        <wsdl:part name="return" type="tns:CreationResponse"/>
+    </wsdl:message>
+    <wsdl:message name="AjoutDevisSoapIn">
+        <wsdl:part name="code_cabinetbase" type="s:string"/>
+        <wsdl:part name="id_ticket" type="s:string"/>
+        <wsdl:part name="id_personne" type="s:string"/>
+        <wsdl:part name="date_creation" type="s:string"/>
+        <wsdl:part name="nom_fichier" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="AjoutDevisSoapOut">
+        <wsdl:part name="return" type="tns:CreationResponse"/>
+    </wsdl:message>
+    <wsdl:message name="AjoutDocumentSoapIn">
+        <wsdl:part name="code_cabinetbase" type="s:string"/>
+        <wsdl:part name="id_ticket" type="s:string"/>
+        <wsdl:part name="id_personne" type="s:string"/>
+        <wsdl:part name="titre" type="s:string"/>
+        <wsdl:part name="date_creation" type="s:string"/>
+        <wsdl:part name="nom_fichier" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="AjoutDocumentSoapOut">
+        <wsdl:part name="return" type="tns:CreationResponse"/>
+    </wsdl:message>
+    <wsdl:message name="AjoutMessageSoapIn">
+        <wsdl:part name="code_cabinetbase" type="s:string"/>
+        <wsdl:part name="id_ticket" type="s:string"/>
+        <wsdl:part name="id_personne" type="s:string"/>
+        <wsdl:part name="titre" type="s:string"/>
+        <wsdl:part name="description" type="s:string"/>
+        <wsdl:part name="statut" type="s:string"/>
+        <wsdl:part name="date_creation" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="AjoutMessageSoapOut">
+        <wsdl:part name="return" type="tns:CreationResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ConnexionSoapIn">
+        <wsdl:part name="code_cabinetbase" type="s:string"/>
+        <wsdl:part name="no_pers" type="s:string"/>
+        <wsdl:part name="motdepasse" type="s:string"/>
+        <wsdl:part name="gestionnaire" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="ConnexionSoapOut">
+        <wsdl:part name="return" type="tns:BundleResponse"/>
+    </wsdl:message>
+    <wsdl:message name="CreationDevisCdeAramisSoapIn">
+        <wsdl:part name="code_cabinetbase" type="s:string"/>
+        <wsdl:part name="id_ticket" type="s:string"/>
+        <wsdl:part name="code_ei" type="s:string"/>
+        <wsdl:part name="affectation" type="s:string"/>
+        <wsdl:part name="type_operation" type="s:string"/>
+        <wsdl:part name="code_lot" type="s:string"/>
+        <wsdl:part name="code_ordre" type="s:string"/>
+        <wsdl:part name="code_pro" type="s:string"/>
+        <wsdl:part name="code_four" type="s:string"/>
+        <wsdl:part name="date_operation" type="s:string"/>
+        <wsdl:part name="date_fin_prevu" type="s:string"/>
+        <wsdl:part name="no_devis_four" type="s:string"/>
+        <wsdl:part name="titre" type="s:string"/>
+        <wsdl:part name="description" type="s:string"/>
+        <wsdl:part name="cat_nat" type="s:string"/>
+        <wsdl:part name="compte" type="s:string"/>
+        <wsdl:part name="cle_ei" type="s:string"/>
+        <wsdl:part name="ss_compte" type="s:string"/>
+        <wsdl:part name="quantite" type="s:string"/>
+        <wsdl:part name="montant_ht" type="s:string"/>
+        <wsdl:part name="code_tva" type="s:string"/>
+        <wsdl:part name="id_personne_declarant" type="s:string"/>
+        <wsdl:part name="id_personne_responsable" type="s:string"/>
+        <wsdl:part name="date_creation" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="CreationDevisCdeAramisSoapOut">
+        <wsdl:part name="return" type="tns:CreationResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ContactDevisCdeAramisSoapIn">
+        <wsdl:part name="code_cabinetbase" type="s:string"/>
+        <wsdl:part name="id_commande" type="s:string"/>
+        <wsdl:part name="code_pers" type="s:string"/>
+        <wsdl:part name="adresse_mail" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="ContactDevisCdeAramisSoapOut">
+        <wsdl:part name="return" type="tns:CreationResponse"/>
+    </wsdl:message>
+    <wsdl:message name="SynchronisationSoapIn">
+        <wsdl:part name="code_cabinetbase" type="s:string"/>
+        <wsdl:part name="code_pers" type="s:string"/>
+        <wsdl:part name="date_synchronisation" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="SynchronisationSoapOut">
+        <wsdl:part name="return" type="tns:BundleResponse"/>
+    </wsdl:message>
+    <wsdl:message name="LectureImmeubleSoapIn">
+        <wsdl:part name="code_cabinetbase" type="s:string"/>
+        <wsdl:part name="code_ei" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="LectureImmeubleSoapOut">
+        <wsdl:part name="return" type="tns:BundleResponse"/>
+    </wsdl:message>
+    <wsdl:message name="LectureParametreSoapIn">
+        <wsdl:part name="code_cabinetbase" type="s:string"/>
+        <wsdl:part name="type_param" type="s:string"/>
+        <wsdl:part name="code_ei" type="s:string"/>
+        <wsdl:part name="code_param" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="LectureParametreSoapOut">
+        <wsdl:part name="return" type="tns:ListeResponse"/>
+    </wsdl:message>
+    <wsdl:message name="LecturePersonnesSoapIn">
+        <wsdl:part name="code_cabinetbase" type="s:string"/>
+        <wsdl:part name="code_pers" type="s:string"/>
+        <wsdl:part name="type_pers" type="s:string"/>
+        <wsdl:part name="nofour" type="s:string"/>
+        <wsdl:part name="nom_pers" type="s:string"/>
+        <wsdl:part name="corps_metier" type="s:string"/>
+        <wsdl:part name="code_ei" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="LecturePersonnesSoapOut">
+        <wsdl:part name="return" type="tns:ListeResponse"/>
+    </wsdl:message>
+    <wsdl:message name="LectureMailsSoapIn">
+        <wsdl:part name="code_cabinetbase" type="s:string"/>
+        <wsdl:part name="code_pers" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="LectureMailsSoapOut">
+        <wsdl:part name="return" type="tns:ListeResponse"/>
+    </wsdl:message>
+    <wsdl:message name="LectureDevisSoapIn">
+        <wsdl:part name="code_cabinetbase" type="s:string"/>
+        <wsdl:part name="code_ei" type="s:string"/>
+        <wsdl:part name="id_ticket" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="LectureDevisSoapOut">
+        <wsdl:part name="return" type="tns:ListeRespDev"/>
+    </wsdl:message>
+    <wsdl:message name="LectureCommandeSoapIn">
+        <wsdl:part name="code_cabinetbase" type="s:string"/>
+        <wsdl:part name="code_ei" type="s:string"/>
+        <wsdl:part name="id_ticket" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="LectureCommandeSoapOut">
+        <wsdl:part name="return" type="tns:ListeRespDev"/>
+    </wsdl:message>
+    <wsdl:message name="LectureOSSoapIn">
+        <wsdl:part name="code_cabinetbase" type="s:string"/>
+        <wsdl:part name="id_OS" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="LectureOSSoapOut">
+        <wsdl:part name="return" type="tns:BundleResponse"/>
+    </wsdl:message>
+    <wsdl:message name="LectureCSSoapIn">
+        <wsdl:part name="code_cabinetbase" type="s:string"/>
+        <wsdl:part name="code_ei" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="LectureCSSoapOut">
+        <wsdl:part name="return" type="tns:ListeResponse"/>
+    </wsdl:message>
+    <wsdl:message name="LectureTicketSoapIn">
+        <wsdl:part name="code_cabinetbase" type="s:string"/>
+        <wsdl:part name="id_ticket" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="LectureTicketSoapOut">
+        <wsdl:part name="return" type="tns:BundleResponse"/>
+    </wsdl:message>
+    <wsdl:message name="SuppressionPhotoSoapIn">
+        <wsdl:part name="code_cabinetbase" type="s:string"/>
+        <wsdl:part name="id_ticket" type="s:string"/>
+        <wsdl:part name="nom_fichier" type="s:string"/>
+        <wsdl:part name="id_personne" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="SuppressionPhotoSoapOut">
+        <wsdl:part name="return" type="tns:BundleResponse"/>
+    </wsdl:message>
+    <wsdl:message name="SynchroAramisSoapIn">
+        <wsdl:part name="code_cabinetbase" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="SynchroAramisSoapOut">
+        <wsdl:part name="return" type="tns:BundleResponse"/>
+    </wsdl:message>
+    <wsdl:message name="SynchroExterneSoapIn">
+        <wsdl:part name="code_cabinetbase" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="SynchroExterneSoapOut">
+        <wsdl:part name="return" type="tns:BundleResponse"/>
+    </wsdl:message>
+    <wsdl:message name="SynchroFinSoapIn">
+        <wsdl:part name="code_cabinetbase" type="s:string"/>
+        <wsdl:part name="type" type="s:string"/>
+        <wsdl:part name="id" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="SynchroFinSoapOut">
+        <wsdl:part name="return" type="tns:BundleResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ModificationEiLotSoapIn">
+        <wsdl:part name="code_cabinetbase" type="s:string"/>
+        <wsdl:part name="Ei_avant" type="s:string"/>
+        <wsdl:part name="Ei_apres" type="s:string"/>
+        <wsdl:part name="Lot_avant" type="s:string"/>
+        <wsdl:part name="Lot_apres" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="ModificationEiLotSoapOut">
+        <wsdl:part name="return" type="tns:BundleResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="ServeurSoap">
+        <wsdl:operation name="AjoutTicket" parameterOrder="code_cabinetbase titre description date_creation code_ei code_lot type_gestion id_personne top_synchro">
+            <wsdl:input message="tns:AjoutTicketSoapIn"/>
+            <wsdl:output message="tns:AjoutTicketSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="AjoutTicketV2" parameterOrder="code_cabinetbase titre description date_creation code_ei code_lot type_gestion id_personne top_synchro ajout_declarant">
+            <wsdl:input message="tns:AjoutTicketV2SoapIn"/>
+            <wsdl:output message="tns:AjoutTicketV2SoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="ModifieTicket" parameterOrder="code_cabinetbase id_ticket statut titre description date_modification code_ei code_lot id_personne id_personne_declarant">
+            <wsdl:input message="tns:ModifieTicketSoapIn"/>
+            <wsdl:output message="tns:ModifieTicketSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="ModifieTicketStatut" parameterOrder="code_cabinetbase id_ticket statut">
+            <wsdl:input message="tns:ModifieTicketStatutSoapIn"/>
+            <wsdl:output message="tns:ModifieTicketStatutSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="AjoutIntervention" parameterOrder="code_cabinetbase id_ticket id_personne titre date duree date_fin">
+            <wsdl:input message="tns:AjoutInterventionSoapIn"/>
+            <wsdl:output message="tns:AjoutInterventionSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="AjoutFournisseur" parameterOrder="code_cabinetbase id_ticket id_personne top_selection">
+            <wsdl:input message="tns:AjoutFournisseurSoapIn"/>
+            <wsdl:output message="tns:AjoutFournisseurSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="ContactFournisseur" parameterOrder="code_cabinetbase id_ticket id_personne action">
+            <wsdl:input message="tns:ContactFournisseurSoapIn"/>
+            <wsdl:output message="tns:ContactFournisseurSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="EnvoiOS" parameterOrder="code_cabinetbase id_personne fichierPDF64 id_ticket mail_dest">
+            <wsdl:input message="tns:EnvoiOSSoapIn"/>
+            <wsdl:output message="tns:EnvoiOSSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="AjoutAbonnement" parameterOrder="code_cabinetbase id_ticket id_personne action origine">
+            <wsdl:input message="tns:AjoutAbonnementSoapIn"/>
+            <wsdl:output message="tns:AjoutAbonnementSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="AjoutPhoto" parameterOrder="code_cabinetbase id_ticket id_personne titre date_creation nom_fichier">
+            <wsdl:input message="tns:AjoutPhotoSoapIn"/>
+            <wsdl:output message="tns:AjoutPhotoSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="AjoutPhotoOS" parameterOrder="code_cabinetbase id_OS type_OS id_personne titre date_creation nom_fichier">
+            <wsdl:input message="tns:AjoutPhotoOSSoapIn"/>
+            <wsdl:output message="tns:AjoutPhotoOSSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="AjoutFacture" parameterOrder="code_cabinetbase id_ticket id_personne date_creation nom_fichier">
+            <wsdl:input message="tns:AjoutFactureSoapIn"/>
+            <wsdl:output message="tns:AjoutFactureSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="AjoutDevis" parameterOrder="code_cabinetbase id_ticket id_personne date_creation nom_fichier">
+            <wsdl:input message="tns:AjoutDevisSoapIn"/>
+            <wsdl:output message="tns:AjoutDevisSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="AjoutDocument" parameterOrder="code_cabinetbase id_ticket id_personne titre date_creation nom_fichier">
+            <wsdl:input message="tns:AjoutDocumentSoapIn"/>
+            <wsdl:output message="tns:AjoutDocumentSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="AjoutMessage" parameterOrder="code_cabinetbase id_ticket id_personne titre description statut date_creation">
+            <wsdl:input message="tns:AjoutMessageSoapIn"/>
+            <wsdl:output message="tns:AjoutMessageSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="Connexion" parameterOrder="code_cabinetbase no_pers motdepasse gestionnaire">
+            <wsdl:input message="tns:ConnexionSoapIn"/>
+            <wsdl:output message="tns:ConnexionSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="CreationDevisCdeAramis" parameterOrder="code_cabinetbase id_ticket code_ei affectation type_operation code_lot code_ordre code_pro code_four date_operation date_fin_prevu no_devis_four titre description cat_nat compte cle_ei ss_compte quantite montant_ht code_tva id_personne_declarant id_personne_responsable date_creation">
+            <wsdl:input message="tns:CreationDevisCdeAramisSoapIn"/>
+            <wsdl:output message="tns:CreationDevisCdeAramisSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="ContactDevisCdeAramis" parameterOrder="code_cabinetbase id_commande code_pers adresse_mail">
+            <wsdl:input message="tns:ContactDevisCdeAramisSoapIn"/>
+            <wsdl:output message="tns:ContactDevisCdeAramisSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="Synchronisation" parameterOrder="code_cabinetbase code_pers date_synchronisation">
+            <wsdl:input message="tns:SynchronisationSoapIn"/>
+            <wsdl:output message="tns:SynchronisationSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="LectureImmeuble" parameterOrder="code_cabinetbase code_ei">
+            <wsdl:input message="tns:LectureImmeubleSoapIn"/>
+            <wsdl:output message="tns:LectureImmeubleSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="LectureParametre" parameterOrder="code_cabinetbase type_param code_ei code_param">
+            <wsdl:input message="tns:LectureParametreSoapIn"/>
+            <wsdl:output message="tns:LectureParametreSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="LecturePersonnes" parameterOrder="code_cabinetbase code_pers type_pers nofour nom_pers corps_metier code_ei">
+            <wsdl:input message="tns:LecturePersonnesSoapIn"/>
+            <wsdl:output message="tns:LecturePersonnesSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="LectureMails" parameterOrder="code_cabinetbase code_pers">
+            <wsdl:input message="tns:LectureMailsSoapIn"/>
+            <wsdl:output message="tns:LectureMailsSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="LectureDevis" parameterOrder="code_cabinetbase code_ei id_ticket">
+            <wsdl:input message="tns:LectureDevisSoapIn"/>
+            <wsdl:output message="tns:LectureDevisSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="LectureCommande" parameterOrder="code_cabinetbase code_ei id_ticket">
+            <wsdl:input message="tns:LectureCommandeSoapIn"/>
+            <wsdl:output message="tns:LectureCommandeSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="LectureOS" parameterOrder="code_cabinetbase id_OS">
+            <wsdl:input message="tns:LectureOSSoapIn"/>
+            <wsdl:output message="tns:LectureOSSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="LectureCS" parameterOrder="code_cabinetbase code_ei">
+            <wsdl:input message="tns:LectureCSSoapIn"/>
+            <wsdl:output message="tns:LectureCSSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="LectureTicket" parameterOrder="code_cabinetbase id_ticket">
+            <wsdl:input message="tns:LectureTicketSoapIn"/>
+            <wsdl:output message="tns:LectureTicketSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="SuppressionPhoto" parameterOrder="code_cabinetbase id_ticket nom_fichier id_personne">
+            <wsdl:input message="tns:SuppressionPhotoSoapIn"/>
+            <wsdl:output message="tns:SuppressionPhotoSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="SynchroAramis">
+            <wsdl:input message="tns:SynchroAramisSoapIn"/>
+            <wsdl:output message="tns:SynchroAramisSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="SynchroExterne">
+            <wsdl:input message="tns:SynchroExterneSoapIn"/>
+            <wsdl:output message="tns:SynchroExterneSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="SynchroFin" parameterOrder="code_cabinetbase type id">
+            <wsdl:input message="tns:SynchroFinSoapIn"/>
+            <wsdl:output message="tns:SynchroFinSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="ModificationEiLot" parameterOrder="code_cabinetbase Ei_avant Ei_apres Lot_avant Lot_apres">
+            <wsdl:input message="tns:ModificationEiLotSoapIn"/>
+            <wsdl:output message="tns:ModificationEiLotSoapOut"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="ServeurSoap" type="tns:ServeurSoap">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+        <wsdl:operation name="AjoutTicket">
+            <soap:operation soapAction="H2I_EventIT_SOAPAjoutTicket"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="code_cabinetbase titre description date_creation code_ei code_lot type_gestion id_personne top_synchro"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="return"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="AjoutTicketV2">
+            <soap:operation soapAction="H2I_EventIT_SOAPAjoutTicketV2"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="code_cabinetbase titre description date_creation code_ei code_lot type_gestion id_personne top_synchro ajout_declarant"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="return"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ModifieTicket">
+            <soap:operation soapAction="H2I_EventIT_SOAPModifieTicket"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="code_cabinetbase id_ticket statut titre description date_modification code_ei code_lot id_personne id_personne_declarant"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="return"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ModifieTicketStatut">
+            <soap:operation soapAction="H2I_EventIT_SOAPModifieTicketStatut"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="code_cabinetbase id_ticket statut"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="return"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="AjoutIntervention">
+            <soap:operation soapAction="H2I_EventIT_SOAPAjoutIntervention"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="code_cabinetbase id_ticket id_personne titre date duree date_fin"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="return"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="AjoutFournisseur">
+            <soap:operation soapAction="H2I_EventIT_SOAPAjoutFournisseur"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="code_cabinetbase id_ticket id_personne top_selection"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="return"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ContactFournisseur">
+            <soap:operation soapAction="H2I_EventIT_SOAPContactFournisseur"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="code_cabinetbase id_ticket id_personne action"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="return"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="EnvoiOS">
+            <soap:operation soapAction="H2I_EventIT_SOAPEnvoiOS"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="code_cabinetbase id_personne fichierPDF64 id_ticket mail_dest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="return"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="AjoutAbonnement">
+            <soap:operation soapAction="H2I_EventIT_SOAPAjoutAbonnement"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="code_cabinetbase id_ticket id_personne action origine"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="return"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="AjoutPhoto">
+            <soap:operation soapAction="H2I_EventIT_SOAPAjoutPhoto"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="code_cabinetbase id_ticket id_personne titre date_creation nom_fichier"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="return"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="AjoutPhotoOS">
+            <soap:operation soapAction="H2I_EventIT_SOAPAjoutPhotoOS"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="code_cabinetbase id_OS type_OS id_personne titre date_creation nom_fichier"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="return"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="AjoutFacture">
+            <soap:operation soapAction="H2I_EventIT_SOAPAjoutFacture"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="code_cabinetbase id_ticket id_personne date_creation nom_fichier"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="return"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="AjoutDevis">
+            <soap:operation soapAction="H2I_EventIT_SOAPAjoutDevis"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="code_cabinetbase id_ticket id_personne date_creation nom_fichier"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="return"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="AjoutDocument">
+            <soap:operation soapAction="H2I_EventIT_SOAPAjoutDocument"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="code_cabinetbase id_ticket id_personne titre date_creation nom_fichier"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="return"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="AjoutMessage">
+            <soap:operation soapAction="H2I_EventIT_SOAPAjoutMessage"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="code_cabinetbase id_ticket id_personne titre description statut date_creation"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="return"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="Connexion">
+            <soap:operation soapAction="H2I_EventIT_SOAPConnexion"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="code_cabinetbase no_pers motdepasse gestionnaire"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="return"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="CreationDevisCdeAramis">
+            <soap:operation soapAction="H2I_EventIT_SOAPCreationDevisCdeAramis"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="code_cabinetbase id_ticket code_ei affectation type_operation code_lot code_ordre code_pro code_four date_operation date_fin_prevu no_devis_four titre description cat_nat compte cle_ei ss_compte quantite montant_ht code_tva id_personne_declarant id_personne_responsable date_creation"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="return"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ContactDevisCdeAramis">
+            <soap:operation soapAction="H2I_EventIT_SOAPContactDevisCdeAramis"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="code_cabinetbase id_commande code_pers adresse_mail"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="return"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="Synchronisation">
+            <soap:operation soapAction="H2I_EventIT_SOAPSynchronisation"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="code_cabinetbase code_pers date_synchronisation"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="return"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="LectureImmeuble">
+            <soap:operation soapAction="H2I_EventIT_SOAPLectureImmeuble"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="code_cabinetbase code_ei"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="return"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="LectureParametre">
+            <soap:operation soapAction="H2I_EventIT_SOAPLectureParametre"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="code_cabinetbase type_param code_ei code_param"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="return"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="LecturePersonnes">
+            <soap:operation soapAction="H2I_EventIT_SOAPLecturePersonnes"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="code_cabinetbase code_pers type_pers nofour nom_pers corps_metier code_ei"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="return"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="LectureMails">
+            <soap:operation soapAction="H2I_EventIT_SOAPLectureMails"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="code_cabinetbase code_pers"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="return"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="LectureDevis">
+            <soap:operation soapAction="H2I_EventIT_SOAPLectureDevis"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="code_cabinetbase code_ei id_ticket"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="return"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="LectureCommande">
+            <soap:operation soapAction="H2I_EventIT_SOAPLectureCommande"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="code_cabinetbase code_ei id_ticket"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="return"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="LectureOS">
+            <soap:operation soapAction="H2I_EventIT_SOAPLectureOS"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="code_cabinetbase id_OS"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="return"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="LectureCS">
+            <soap:operation soapAction="H2I_EventIT_SOAPLectureCS"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="code_cabinetbase code_ei"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="return"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="LectureTicket">
+            <soap:operation soapAction="H2I_EventIT_SOAPLectureTicket"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="code_cabinetbase id_ticket"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="return"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="SuppressionPhoto">
+            <soap:operation soapAction="H2I_EventIT_SOAPSuppressionPhoto"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="code_cabinetbase id_ticket nom_fichier id_personne"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="return"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="SynchroAramis">
+            <soap:operation soapAction="H2I_EventIT_SOAPSynchroAramis"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="code_cabinetbase"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="return"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="SynchroExterne">
+            <soap:operation soapAction="H2I_EventIT_SOAPSynchroExterne"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="code_cabinetbase"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="return"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="SynchroFin">
+            <soap:operation soapAction="H2I_EventIT_SOAPSynchroFin"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="code_cabinetbase type id"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="return"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ModificationEiLot">
+            <soap:operation soapAction="H2I_EventIT_SOAPModificationEiLot"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="code_cabinetbase Ei_avant Ei_apres Lot_avant Lot_apres"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="H2I_EventIT_SOAP" parts="return"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="Serveur">
+        <wsdl:port name="ServeurSoap" binding="tns:ServeurSoap">
+            <soap:address location="http://poceventit.h2i.fr/server"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
