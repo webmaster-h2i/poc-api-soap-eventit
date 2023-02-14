@@ -14,6 +14,4 @@ use App\Http\Controllers\SoapController;
 |
 */
 
-Route::get('/soap/wsdl', [SoapController::class, 'getWsdl']);
-
-Route::post('/soap', [ApiController::class, 'getSoap']);
+Route::get('/wsdl', [SoapController::class, 'getWsdl']);
